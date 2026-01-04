@@ -1,0 +1,37 @@
+name: Update ranges
+
+on:
+    schedule:
+        - cron: '0 6 * * *'
+
+jobs:
+    execute:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: ['24.x']
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: 'Use Node.js ${{ matrix.node-version }}'
+              uses: 'actions/setup-node@v4'
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update ranges
+              run: |
+                  npm install --omit=dev
+                  node update.js
+
+            - name: Commit files
+              run: |
+                  git config --local user.email "github-actions@example.com"
+                  git config --local user.name "GitHub Action"
+                  git commit -m "Update ranges" -a
+
+            - name: Push changes
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}

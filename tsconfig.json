@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"noImplicitAny": true,
+		"preserveConstEnums": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"checkJs": true,
+		"esModuleInterop": false,
+		"target": "ES2022",
+		"skipLibCheck": true,
+		"noEmit": true,
+		"strictBindCallApply": true,
+		"alwaysStrict": true,
+		// Required for Node.js built-in type stripping
+		"allowImportingTsExtensions": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"include": ["update.js", "sources.js", "**/*"]
+}
