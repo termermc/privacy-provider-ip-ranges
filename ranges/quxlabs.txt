@@ -1,5 +1,5 @@
 # Generated from https://as203038.net/geofeed.csv
-# Last updated: 2026-07-25T07:46:45.297Z
+# Last updated: 2026-07-26T08:01:12.476Z
 185.243.23.0/28
 185.243.23.16/28
 185.243.23.32/28
